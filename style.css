@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+*    { box-sizing: border-box; }
+html { font-size: 100%; }
+body { font-family: "Meiryo"; color: mainColor; }
+img  { max-width: 100%; vertical-align: bottom; }
+li   { list-style: none; }
+a    { text-decoration: none; }
+/* 横幅を設定するための共通クラス */
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 20px;
+    margin: 60px auto 0;
+
+    display: flex;
+}
+/* /ここまで共通設定 */
+
+
+.flexLeft {
+    width: 40%;
+}
+.flexRight {
+    width: 60%;
+    display: flex;
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+.flexRight img {
+    width: calc(100% / 3);
+    padding-left: 12px;
+}
+
+
+/* レスポンシブ・ブレークポイント900px
+------------------------------- */
+@media screen and (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .flexLeft {
+        width: 100%;
+    }
+
+    .flexRight {
+        width: 100%;
+    }
+
+    .flexRight img {
+        width: 50%;
+        padding-top: 11px;
+        padding-left: 0;
+    }
+
+    .flexRight img:nth-last-child(odd) {
+        padding-left: 6px;
+    }
+    .flexRight img:nth-last-child(even) {
+        padding-right: 6px;
+    }
+    
+}
+/*-------------------------------------------
+-------------------------------------------*/
